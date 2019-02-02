@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    ejrekr
-    {{ test }}
+    <h2> Result from AWS Lambda: {{ test }} </h2>
   </div>
 </template>
 
@@ -12,17 +11,18 @@ export default {
   data() {
     return {
       msg: 'Welcome to your Vue.js app',
-      test: 'hello',
+      test: 'hello, not from lambda',
     };
   },
   mounted: function () {
     this.fetchURL();
   },
   methods: {
-    fetchURL: function () {
-      this.test = 'did test change?';
-      let res = fetch('https://sux8on7u93.execute-api.us-west-2.amazonaws.com/default/corsTutorial');
-      this.test = res;
+    fetchURL: async function () {
+      let res = await fetch('https://eoiaxewpyl.execute-api.us-west-2.amazonaws.com/default/corsTutorialWrong');
+      // link with CORS header: https://sux8on7u93.execute-api.us-west-2.amazonaws.com/default/corsTutorial
+      const json = await res.clone().json();
+      this.test = json;
     },
   },
 };
