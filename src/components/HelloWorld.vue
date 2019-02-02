@@ -20,7 +20,8 @@ export default {
   methods: {
     fetchURL: async function () {
       let res = await fetch('https://eoiaxewpyl.execute-api.us-west-2.amazonaws.com/default/corsTutorialWrong');
-      // link with CORS header: https://sux8on7u93.execute-api.us-west-2.amazonaws.com/default/corsTutorial
+      // link with CORS header for purpose of tutorial: https://sux8on7u93.execute-api.us-west-2.amazonaws.com/default/corsTutorial
+      // Students should replace the link above with their own AWS Lambda API link.
       const json = await res.clone().json();
       this.test = json;
     },
