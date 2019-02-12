@@ -1,4 +1,6 @@
-# corstutorial2
+# Cors Tutorial
+[Link](https://docs.google.com/presentation/d/1-PvKBqh7mFWSQO57H__JJ3pFgHoJPk2R1pqHMLbLX38/edit?usp=sharing)
+This tutorial introduces the concept of cors and how we can implement it on awslambda.
 
 ## Project setup
 ```
